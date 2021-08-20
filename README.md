@@ -12,6 +12,7 @@ pip install -r requirements.txt
 
 ## Usage
 
+Search for torrent using the API
 ```python
 from KickAssAPI import API
 
@@ -23,6 +24,7 @@ for result in results:
     print("Link: ",result.get('href'))
 ```
 
+Get the magent link of a selected torrent from search results 
 ```python
 from KickAssAPI import API
 
