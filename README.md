@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-Search for torrent using the API
+Search for torrents using the API
 ```python
 from KickAssAPI import API
 
