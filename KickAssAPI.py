@@ -3,12 +3,15 @@ from bs4 import BeautifulSoup
 
 class KickAssAPI():
 
-    def search(query) -> dict:
+    def __init__(self):
+        self.headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+
+    def search(self,query) -> dict:
 
         """ Returns a list of dictionaries with the results of the search """
 
         url = "https://katcr.to/usearch/" + query + "/"
-        results = requests.get(url)
+        results = requests.get(url, headers=self.headers)
 
         if results.status_code == 200:
             soup = BeautifulSoup(results.text, "html.parser")
@@ -24,11 +27,11 @@ class KickAssAPI():
         return results
 
 
-    def magnet(search_dict,index=0) -> str:
+    def magnet(self,search_dict,index=0) -> str:
 
         """ Returns the magnet link of the selected torrent """
 
-        magnet_page = requests.get("https://katcr.to"+search_dict[index].get("href")) 
+        magnet_page = requests.get("https://katcr.to"+search_dict[index].get("href"), headers=self.headers) 
         magnet_page_bs = BeautifulSoup(magnet_page.text, "html.parser")
         magnet_link = magnet_page_bs.find("a", {"class": "kaGiantButton"}).get("href")
 
