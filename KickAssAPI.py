@@ -2,20 +2,20 @@ import requests
 from bs4 import BeautifulSoup
 
 class KickAssAPI():
-        
-    def search(self,query) -> dict:
+
+    def search(query) -> dict:
 
         """ Returns a list of dictionaries with the results of the search """
 
         url = "https://katcr.to/usearch/" + query + "/"
         results = requests.get(url)
         soup = BeautifulSoup(results.text, "html.parser")
-        self.results = soup.find_all("a", {"class": "cellMainLink"})
+        results = soup.find_all("a", {"class": "cellMainLink"})
 
-        return self.results
+        return results
 
 
-    def magnet(self,search_dict,index=0) -> str:
+    def magnet(search_dict,index=0) -> str:
 
         """ Returns the magnet link of the selected torrent """
 
