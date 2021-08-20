@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 Search for torrents using the API
 ```python
-from KickAssAPI import API
+from KickAssAPI import KickAssAPI
 
 api = API()
 results = api.search("Attack on Titan")
@@ -26,7 +26,7 @@ for result in results:
 
 Get the magent link of a selected torrent from search results 
 ```python
-from KickAssAPI import API
+from KickAssAPI import KickAssAPI
 
 api = API()
 results = api.search("Attack on Titan")

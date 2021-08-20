@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-class API():
+class KickAssAPI():
         
     def search(self,query) -> dict:
 
