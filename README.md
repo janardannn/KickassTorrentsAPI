@@ -1,6 +1,6 @@
 # ABOUT
 
-This is a unofficial API for KickassTorrents.
+This is an unofficial API for KickassTorrents.
 
 ## Installation
 
